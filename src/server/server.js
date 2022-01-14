@@ -1,5 +1,5 @@
 const express = require('express');
-const { findBooks } = require('../db/Db');
+const { findBooks, editEntry } = require('../db/Db');
 const app = express();
 const server = require('http').createServer(app)
 const io = require('socket.io')(server)
@@ -14,8 +14,14 @@ app.get('/', (req, res) => {
 
 io.on('connection', (socket) => {
     socket.on('get books', () => {
-        findBooks().then((data) => {
+        findBooks().then(data => {
             socket.emit('return books', data)
+        })
+    })
+
+    socket.on('edit entry', (data) => {
+        editEntry(data).then(_=> {
+            socket.emit('update components')
         })
     })
 })

@@ -1,5 +1,5 @@
 import React, { useEffect, useState, createContext } from 'react';
-import GetBooks from '../Controller'
+import { getBooks } from '../Controller'
 
 import '../css/books.css';
 import { useNavigate } from 'react-router-dom';
@@ -10,21 +10,30 @@ function Books() {
 
     const navigate = useNavigate();
     const [books, setBooks] = useState([])
+    const [update, setUpdate] = useState(false)
 
     const handleClick = (data, type) => {
         if (type === "desc") {
-            navigate(`/${data.name}`, { state: { data: data }})
+            navigate(`/${data._id}`, { state: { data: data }})
         } else if (type === "edit"){
-            navigate(`/edit/${data.name}`, { state: { data: data }})
+            navigate(`/edit/${data._id}`, { state: { data: data }})
         }
     }
 
     useEffect(() => {
-        const s = GetBooks()
+        const s = getBooks()
         s.on('return books', (data) => {
             setBooks(data)
         }) 
-    }, [])
+
+        s.on('update components', _=> {
+            setUpdate(true)
+        })
+
+        return () => {
+            setUpdate(false)
+        }
+    }, [update])
     
     return (
         <div>
@@ -37,6 +46,5 @@ function Books() {
         </div>
     )
 }
-
 
 export default Books
