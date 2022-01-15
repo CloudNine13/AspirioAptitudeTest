@@ -2,6 +2,7 @@ import React from "react";
 import Books from "./components/Books";
 import Description from "./components/Description";
 import Edit from "./components/Edit";
+import Add from "./components/Add";
 import {
     BrowserRouter as Router,
     Route,
@@ -16,6 +17,7 @@ function App() {
                    <Route exact path='/' element={<Books />}></Route>
                    <Route path="/:id" element={<Description />} />
                    <Route path="/edit/:id" element={<Edit />} />
+                   <Route path="/add" element={<Add />} />
                </Routes>
             </div>
         </Router>

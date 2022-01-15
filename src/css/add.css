@@ -1,0 +1,78 @@
+.input-add:hover, .textarea-add:hover {
+    outline: none;
+    border: 1px solid #095484;
+}
+
+.input-add {
+    width: calc(100% - 10px);
+    padding: 5px;
+}
+
+.input-add, .textarea-add {
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.container-add {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+    padding: 3px;
+}
+
+.textarea-add {
+    width: calc(100% - 6px);
+}
+
+.item-add {
+    position: relative;
+    margin: 10px 0;
+}
+
+.form-add {
+    width: 35%;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 3px 5px #ccc; 
+}
+
+.aux-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.aux-item1, .aux-item2 {
+    margin: 10px;
+}
+
+.submit-add {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    -webkit-border-radius: 5px; 
+    -moz-border-radius: 5px; 
+    border-radius: 5px; 
+    background-color: #095484;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.button-add {
+    width: 5%;
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+}
+  
+.button-add:hover {
+    background-color: #555555;
+    color: white;
+}
+
+.submit-add:hover {
+    background-color: #0666a3;
+}

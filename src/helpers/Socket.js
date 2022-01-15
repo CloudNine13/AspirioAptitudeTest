@@ -1,7 +1,17 @@
 import React from "react";
-import socketio from "socket.io-client";
 
-const SERVER = "http://localhost:8080/"
+/**
+ * Summary.
+ * This function is used to define and use the socket connection
+ * 
+ * @author Igor Dzichkovskii <Igordzich@gmail.com>
+ * @memberof helpers
+ * 
+ */
+export const socket = () => {
+    const SERVER = "http://localhost:4000/"
+    const io = require("socket.io-client")
+    return io.connect(SERVER)
+}
 
-export const socket = socketio.connect(SERVER);
 export const SocketContext = React.createContext();

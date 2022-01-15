@@ -1,27 +1,39 @@
 const express = require('express');
-const { findBooks, editEntry } = require('../db/Db');
+const { findBooks, editEntry, addEntry } = require('../db/Db');
 const app = express();
 const server = require('http').createServer(app)
 const io = require('socket.io')(server)
 
-server.listen(8080, () => {
-    console.log("Server is on")
+server.listen(4000)
+
+app.get('/', (_, res) => {
+    res.status(200).send("SERVER STATUS: 200")
 })
 
-app.get('/', (req, res) => {
-    res.status(200).send("CODE: 200")
-})
-
-io.on('connection', (socket) => {
+io.sockets.on('connection', (socket) => {
+    //Listening to all connections 
     socket.on('get books', () => {
+        //Listening to get books 
         findBooks().then(data => {
-            socket.emit('return books', data)
+            io.emit("ret bks", {data: data})
+        })
+    })
+
+    socket.on('add entry', (data) => {
+        //Listening to add a book 
+        addEntry(data.items).then(_=> {
+            findBooks().then(data => {
+                io.emit('update components', {data: data})
+            })
         })
     })
 
     socket.on('edit entry', (data) => {
-        editEntry(data).then(_=> {
-            socket.emit('update components')
+        //Listening to edit a book 
+        editEntry(data.items).then(_=> {
+            findBooks().then(data => {
+                io.emit('update components', {data: data})
+            })
         })
     })
 })

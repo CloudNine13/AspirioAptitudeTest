@@ -1,0 +1,49 @@
+.container-edit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+    padding: 20px;
+}
+
+.form-edit {
+    width: 100%;
+    padding: 20px;
+    border-radius: 6px;
+    background: #fff;
+    box-shadow: 0 0 20px 0  #004d00;
+}
+
+.input-edit {
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    width: calc(100% - 10px);
+    padding: 5px;
+}
+
+.textarea-edit {
+    width: calc(100% - 12px);
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.centerp {
+    text-align: center;
+    font-size: 14pt;
+    color: #1164a7;
+}
+
+.container-aux-edit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.textarea-edit .input-edit:hover {
+    border: 1px solid transparent;
+    box-shadow: 0 0 6px 0 #004d00;
+    color:#004d00;
+}

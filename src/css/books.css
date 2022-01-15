@@ -1,9 +1,13 @@
-.container {
+.container-books {
     display: flex;
-    align-items: stretch;
+    margin: 20px;
+    align-items: center;
+    justify-content: center;
 }
 
-.name {
+.name-books {
+    box-shadow: 0 8px 1px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
     border: 2px;
     width: 250px;
     text-align: center;
@@ -14,13 +18,74 @@
     margin: 10px;
 }
 
-.edit {
-    border: 2px;
-    width: fit-content;
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}
+
+.add-books {
+    width: 130px;
+    height: 55px;
     text-align: center;
-    font-family:'Courier New', Courier, monospace;
-    border-style: solid;
-    border-color: black;
-    padding: 1em;
-    margin: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    cursor: pointer;
+    outline: none;
+    color: #000000;
+    background-color: #07a30f;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 5px #999;
+}
+
+.edit-books {
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    cursor: pointer;
+    outline: none;
+    color: #000000;
+    background-color: #a34d07;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 5px #999;
+}
+
+.edit-books:hover {background-color: #8d4617}
+
+.add-books:hover {background-color: #08720e}
+
+.edit-books:active {
+  background-color: #8d4617;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.loader-books:empty {
+    position: absolute;
+    top: calc(50% - 4em);
+    left: calc(50% - 4em);
+    width: 6em;
+    height: 6em;
+    border: 1.1em solid rgba(0, 0, 0, 0.2);
+    border-left: 1.1em solid #000000;
+    border-radius: 50%;
+    animation: load8 1.1s infinite linear;
+}
+ 
+.add-books:active {
+    background-color: #08720e;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+@keyframes load8 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
