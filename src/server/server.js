@@ -4,10 +4,8 @@ const app = express();
 const server = require('http').createServer(app)
 const io = require('socket.io')(server)
 
-server.listen(4000)
-
-app.get('/', (_, res) => {
-    res.status(200).send("SERVER STATUS: 200")
+server.listen(4000, () => {
+    console.log(`Server running at port 4000`);
 })
 
 io.sockets.on('connection', (socket) => {
