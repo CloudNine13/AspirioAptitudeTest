@@ -2,6 +2,10 @@
   "name": "aspirioaptitudetest",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "npm": "8.3.0",
+    "node": "16.13.2"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
@@ -19,8 +23,7 @@
     "web-vitals": "^2.1.3"
   },
   "scripts": {
-    "start": "cd src/server && node server.js",
-    "heroku-postbuild": "cd src/server && node server.js",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

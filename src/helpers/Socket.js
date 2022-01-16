@@ -9,7 +9,7 @@ import React from "react";
  * 
  */
 export const socket = () => {
-    const SERVER = "http://localhost:4000/"
+    const SERVER = "http://localhost:8080/"
     const io = require("socket.io-client")
     return io.connect(SERVER)
 }
