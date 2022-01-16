@@ -4,7 +4,7 @@
   "description": "The app for Aspirio test",
   "main": "./server/server.js",
   "scripts": {
-    "start": "node server",
+    "start": "node server/server.js",
     "heroku-postbuild": "cd react-ui/ && npm install && npm run build"
   },
   "repository": {
