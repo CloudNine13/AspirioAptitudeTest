@@ -8,8 +8,11 @@ import React from "react";
  * @memberof helpers
  * 
  */
+
+const PORT = process.env.PORT || 8080
+
 export const socket = () => {
-    const SERVER = process.env.PORT || 8080
+    const SERVER = `http://localhost:${PORT}/`
     const io = require("socket.io-client")
     return io.connect(SERVER)
 }

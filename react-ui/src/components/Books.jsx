@@ -22,8 +22,6 @@ export const BookContext = createContext()
  */
 function Books() {
 
-    console.log("SSSSSSSSSSSSSSSEEEEEEEEEEEERRRRRRRRRRRRRRVVVVVVVVVVVVVVVVVEEEEEEEEEEEEEEEEERRRRRRRRRRRRRRRRRRR")
-
     const navigate = useNavigate();
     const [loading, setLoading] = useState(true);
     const [books, setBooks] = useState([]);
