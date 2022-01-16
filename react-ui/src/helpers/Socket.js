@@ -12,7 +12,7 @@ import React from "react";
 const PORT = process.env.PORT || 8080
 
 export const socket = () => {
-    const SERVER = `http://localhost:${PORT}/`
+    const SERVER = `https://aspirio-aptitude-test.herokuapp.com:${PORT}/`
     const io = require("socket.io-client")
     return io.connect(SERVER)
 }
