@@ -10,6 +10,9 @@ import {
   } from "react-router-dom";
 
 function App() {
+
+    console.log("Client: App has started!")
+
     return (
         <Router>
             <div className="App">

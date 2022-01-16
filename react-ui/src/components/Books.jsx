@@ -51,9 +51,13 @@ function Books() {
     
     useEffect(() => {
         getBooks(s)  // Sending (async) petition to DB
+        console.log("Client: Getting the books...")
 
         s.on('ret bks', data => {
             //Listening to the petition of getting all the books
+
+            console.log("Client: Setting the books...")
+
             setBooks(data.data)
             setLoading(false)
         })
