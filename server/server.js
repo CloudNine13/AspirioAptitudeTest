@@ -5,6 +5,8 @@ const server = require('http').createServer(app)
 const io = require('socket.io')(server)
 const PORT = process.env.PORT || 8080
 
+app.use(express.static(path.resolve(__dirname__, './react-ui/build')))
+
 server.listen((PORT), () => {
     console.log(`Server running at port ${PORT}`);
 })
