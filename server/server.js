@@ -9,10 +9,6 @@ const PORT = process.env.PORT || 8080
 
 app.use(express.static(path.resolve(path.dirname(''), './react-ui/build')))
 
-server.listen((PORT), () => {
-    console.log(`Server: Server running at port ${PORT}`);
-})
-
 io.sockets.on('connection', (socket) => {
 
     console.log("Server: Client has connected!")
@@ -53,6 +49,9 @@ io.sockets.on('connection', (socket) => {
     })
 })
 
+server.listen((PORT), () => {
+    console.log(`Server: Server running at port ${PORT}`);
+})
 
 
 
