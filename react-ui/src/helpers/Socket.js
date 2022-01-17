@@ -12,9 +12,9 @@ import React from "react";
 //const PORT = process.env.PORT || 8080
 
 export const socket = () => {
-    //const SERVER = `ws://aspirio-aptitude-test.herokuapp.com/`
-    const io = require("socket.io")
-    return io()
+    const SERVER = `wss://aspirio-aptitude-test.herokuapp.com/`
+    const { io } = require("socket.io-client")
+    return io(SERVER)
 }
 
 export const SocketContext = React.createContext();
