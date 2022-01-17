@@ -16,5 +16,3 @@ export const socket = () => {
     const { io } = require("socket.io-client")
     return io(SERVER)
 }
-
-export const SocketContext = React.createContext();

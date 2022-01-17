@@ -16,9 +16,6 @@ io.on('connection', (socket) => {
     //Listening to all connections 
     socket.on('get books', () => {
         //Listening to get books 
-
-        console.log("Server: Getting books...")
-
         findBooks().then(data => {
             io.emit("ret bks", {data: data})
         })
@@ -26,9 +23,6 @@ io.on('connection', (socket) => {
 
     socket.on('add entry', (data) => {
         //Listening to add a book 
-
-        console.log("Server: Adding a book...")
-
         addEntry(data.items).then(_=> {
             findBooks().then(data => {
                 io.emit('update components', {data: data})
@@ -38,9 +32,6 @@ io.on('connection', (socket) => {
 
     socket.on('edit entry', (data) => {
         //Listening to edit a book 
-
-        console.log("Server: Editting a book...")
-
         editEntry(data.items).then(_=> {
             findBooks().then(data => {
                 io.emit('update components', {data: data})

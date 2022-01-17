@@ -1,5 +1,5 @@
 import React, { useEffect, useState, createContext } from 'react';
-import { getBooks, setSocket } from '../Controller'
+import { getBooks, setSocket } from '../controllers/Controller'
 import '../css/books.css'
 import { useNavigate } from 'react-router-dom';
 
@@ -51,13 +51,9 @@ function Books() {
     
     useEffect(() => {
         getBooks(s)  // Sending (async) petition to DB
-        console.log("Client: Getting the books...")
 
         s.on('ret bks', data => {
             //Listening to the petition of getting all the books
-
-            console.log("Client: Setting the books...")
-
             setBooks(data.data)
             setLoading(false)
         })

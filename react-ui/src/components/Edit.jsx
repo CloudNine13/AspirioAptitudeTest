@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from "react-router-dom";
 import '../css/edit.css'
-import { updateEntry } from '../Controller'
+import { updateEntry } from '../controllers/Controller'
 
 /**
  * Summary. 

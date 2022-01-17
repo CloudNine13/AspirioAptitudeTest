@@ -1,4 +1,4 @@
-import { socket } from './helpers/Socket'
+import { socket } from '../helpers/Socket'
 
 /**
  * Summary.

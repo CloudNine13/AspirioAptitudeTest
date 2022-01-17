@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../css/add.css'
 import { useNavigate } from "react-router-dom";
-import { addEntry } from '../Controller'
+import { addEntry } from '../controllers/Controller'
 
 /**
  * Summary. 
