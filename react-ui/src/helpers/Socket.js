@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 8080
 export const socket = () => {
     const SERVER = `ws://aspirio-aptitude-test.herokuapp.com/`
     const io = require("socket.io-client")
-    return io.connect(SERVER)
+    return io.connect()
 }
 
 export const SocketContext = React.createContext();
