@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 8080
 
 app.use(express.static(path.resolve(path.dirname(''), './react-ui/build')))
 
-io.sockets.on('connection', (socket) => {
+io.on('connection', (socket) => {
 
     console.log("Server: Client has connected!")
 
