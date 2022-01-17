@@ -3,11 +3,11 @@ const { findBooks, editEntry, addEntry } = require('../db/db');
 const app = express();
 const server = require('http').createServer(app)
 const io = require('socket.io')(server)
-//const path = require('path');
+const path = require('path');
 
 const PORT = process.env.PORT || 8080
 
-//app.use(express.static(path.resolve(path.dirname(''), './react-ui/build')))
+app.use(express.static(path.resolve(path.dirname(''), './react-ui/build')))
 
 io.sockets.on('connection', (socket) => {
 
